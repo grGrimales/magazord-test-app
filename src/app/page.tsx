@@ -16,9 +16,9 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('repos');
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center">
       <Header />
-      <div className="container mx-auto p-6">
+      <div className="w-full max-w-5xl px-6">
         <UserProfile />
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <SearchBar />
