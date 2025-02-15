@@ -7,7 +7,7 @@ interface TabsProps {
 
 export default function Tabs({ activeTab, setActiveTab }: TabsProps) {
   return (
-    <div className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-start gap-8">
+    <div className="w-full flex  sm:flex-row sm:items-center sm:justify-start gap-8">
       {/* Pestaña de Repositorios */}
       <button
         className={`flex items-center gap-2 relative py-3 text-lg font-normal transition-colors
