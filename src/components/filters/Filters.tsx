@@ -1,8 +1,10 @@
+
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Search } from "lucide-react";
 import FilterModal from "./FilterModal";
+import FilterDropdown from "./FilterDropdown";
 
 export default function Filters() {
   const [filterType, setFilterType] = useState<"type" | "language" | null>(null);
@@ -10,12 +12,16 @@ export default function Filters() {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isTabletOrDesktop, setIsTabletOrDesktop] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
       setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1024);
       setIsDesktop(window.innerWidth >= 1024);
+      setIsTabletOrDesktop(window.innerWidth >= 640);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -122,9 +128,14 @@ export default function Filters() {
       )}
 
 
-      {/* Modal solo en mobile cuando se selecciona Type o Language */}
       {filterType && isMobile && (
         <FilterModal filterType={filterType} onClose={() => setFilterType(null)} />
+      )}
+
+      {filterType && isTabletOrDesktop && (
+        <div ref={dropdownRef} className="relative">
+          <FilterDropdown filterType={filterType} onClose={() => setFilterType(null)} />
+        </div>
       )}
     </>
   );

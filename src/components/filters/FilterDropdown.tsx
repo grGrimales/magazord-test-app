@@ -1,14 +1,11 @@
 import { useState } from "react";
-import { X } from "lucide-react"; 
 
-interface FilterModalProps {
-  filterType: "type" | "language" | null;
+interface FilterDropdownProps {
+  filterType: "type" | "language";
   onClose: () => void;
 }
 
-export default function FilterModal({ filterType, onClose }: FilterModalProps) {
-  if (!filterType) return null;
-
+export default function FilterDropdown({ filterType, onClose }: FilterDropdownProps) {
   const options =
     filterType === "type"
       ? ["All", "Sources", "Forks", "Archived", "Mirrors"]
@@ -23,20 +20,11 @@ export default function FilterModal({ filterType, onClose }: FilterModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end sm:items-center justify-center">
-      <div className="bg-white w-full sm:w-[400px] h-[95vh] sm:rounded-lg p-5 relative">
-        <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-2 bg-[#C4C4C4] rounded-lg"></div>
+    <>
+      <div className="fixed inset-0 bg-black bg-opacity-20  z-40" onClick={onClose}></div>
 
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-[24px] font-bold leading-[28.13px] text-black">
-            {filterType === "type" ? "Type" : "Language"}
-          </h2>
-          <button onClick={onClose} className="text-alertRed w-6 h-6 cursor-pointer">
-            <X size={24} strokeWidth={2} /> 
-          </button>
-        </div>
-
-        <ul className="space-y-2">
+      <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-200 z-50">
+        <ul className="space-y-2 p-2">
           {options.map((option) => (
             <li
               key={option}
@@ -48,13 +36,11 @@ export default function FilterModal({ filterType, onClose }: FilterModalProps) {
               }`}
             >
               <div
-                className={`w-5 h-5 flex items-center justify-center border rounded-sm border-[#BFBFBF] ${
+                className={`w-5 h-5 flex items-center justify-center border border-[#BFBFBF] ${
                   selectedOptions.includes(option) ? "bg-buttonSecondary" : "bg-white"
                 }`}
               >
-                {selectedOptions.includes(option) && (
-                  <span className="text-white text-sm font-bold">✔</span>
-                )}
+                {selectedOptions.includes(option) && <span className="text-white text-sm font-bold">✔</span>}
               </div>
               <span
                 className={`ml-3 text-base font-normal ${
@@ -67,6 +53,6 @@ export default function FilterModal({ filterType, onClose }: FilterModalProps) {
           ))}
         </ul>
       </div>
-    </div>
+    </>
   );
 }

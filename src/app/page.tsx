@@ -6,7 +6,7 @@ import UserProfile from '@/components/UserProfile';
 import Tabs from '@/components/Tabs';
 import SearchBar from '@/components/SearchBar';
 import RepoCard from '@/components/RepoCard';
-import Filters from '@/components/Filters';
+import Filters from '@/components/filters/Filters';
 
 const mockRepos = [
   { name: "Next.js Test", description: "Un test de Next.js", stars: 1500, forks: 100, url: "#" },
