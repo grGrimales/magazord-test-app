@@ -3,21 +3,24 @@
 
 import { useState } from "react";
 import { Building, MapPin, Link, Camera, ChevronDown, ChevronUp, Smile } from "lucide-react";
+import Image from "next/image";
 
 export default function UserProfile() {
   const [showLinks, setShowLinks] = useState(false);
 
   return (
     <div className="p-6 flex flex-col items-center w-full  sm:w-64" >
-      <div className="relative w-24 h-24">
-        <img
-          src="https://via.placeholder.com/100"
+      <div className="relative sm:w-104 sm:h-104 lg:w-150 lg:h-150">
+        <Image
+          src="/images/imageProfile.png"
           alt="User Avatar"
-          className="rounded-full w-24 h-24 border-4 border-white shadow-md"
+          width={104} 
+          height={104}
+          className="rounded-full border-4 border-white shadow-md  sm:w-104 sm:h-104 lg:w-150 lg:h-150"
         />
         <div className="absolute bottom-0 right-0 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md">
           {/* <Smile size={18} className="text-yellow-500" /> */}
-          <span className="text-lg">😎</span> 
+          <span className="text-lg">😎</span>
         </div>
       </div>
 
@@ -25,7 +28,7 @@ export default function UserProfile() {
         <h2 className="text-xl font-semibold text-textPrimary text-center sm:text-left">
           Gabriel Cordeiro
         </h2>
-        <p className="text-textSecondary text-sm text-center sm:text-left">
+        <p className="text-textSecondary text-sm text-center">
           Head Development Team Front-End
         </p>
 
