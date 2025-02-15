@@ -16,16 +16,24 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('repos');
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center">
+    <div className="min-h-screen bg-background flex flex-col items-center">
       <Header />
-      <div className="w-full max-w-5xl px-6">
-        <UserProfile />
-        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-        <SearchBar />
-        <div className="mt-4">
-          {mockRepos.map((repo) => (
-            <RepoCard key={repo.name} {...repo} />
-          ))}
+      <div className="w-full max-w-5xl px-6 flex flex-col sm:flex-row sm:items-start">
+        <div className="w-full max-w-5xl px-6">
+          <div className="flex flex-col sm:flex-row sm:items-start ">
+            <UserProfile />
+
+            <div className="w-full max-w-5xl px-6 mt-7">
+              <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
+              <SearchBar />
+              <div className="mt-4">
+                {mockRepos.map((repo) => (
+                  <RepoCard key={repo.name} {...repo} />
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
