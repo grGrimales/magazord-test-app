@@ -1,15 +1,12 @@
 import { create } from "zustand";
 
-interface GithubState {
-  repos: any[];
-  starred: any[];
-  setRepos: (repos: any[]) => void;
-  setStarred: (starred: any[]) => void;
-}
+
 
 export const useGithubStore = create<GithubState>((set) => ({
-  repos: [],
-  starred: [],
-  setRepos: (repos) => set({ repos }),
-  setStarred: (starred) => set({ starred }),
+  activeTab: "repos",
+  reposCount: 0,
+  starredCount: 0,
+  setActiveTab: (tab) => set({ activeTab: tab }),
+  setReposCount: (count) => set({ reposCount: count }),
+  setStarredCount: (count) => set({ starredCount: count }),
 }));

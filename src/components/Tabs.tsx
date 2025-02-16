@@ -1,3 +1,4 @@
+import { useGithubStore } from "@/store/github/githubStore";
 import { Book, Star } from "lucide-react";
 
 interface TabsProps {
@@ -5,7 +6,11 @@ interface TabsProps {
   setActiveTab: (tab: string) => void;
 }
 
-export default function Tabs({ activeTab, setActiveTab }: TabsProps) {
+export default function Tabs() {
+
+
+  const { activeTab, setActiveTab, reposCount, starredCount } = useGithubStore(); 
+
   return (
     <div className="w-full flex  sm:flex-row sm:items-center sm:justify-start gap-8">
       {/* Pestaña de Repositorios */}
@@ -25,7 +30,7 @@ export default function Tabs({ activeTab, setActiveTab }: TabsProps) {
         <span
           className="ml-2  px-2 py-1 w-10 h-6 flex items-center justify-center shadow-sm text-sm bg-background rounded-full border border-border text-textSecondary"
         >
-          81
+           {reposCount}
         </span>
 
         {activeTab === "repos" && (
@@ -48,7 +53,7 @@ export default function Tabs({ activeTab, setActiveTab }: TabsProps) {
         <span
           className="ml-2  px-2 py-1 w-10 h-6 flex items-center justify-center shadow-sm text-sm bg-background rounded-full border border-border text-textSecondary"
         >
-          12
+    {starredCount}
         </span>
 
         {activeTab === "starred" && (

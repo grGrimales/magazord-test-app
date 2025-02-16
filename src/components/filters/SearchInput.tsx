@@ -4,7 +4,7 @@ interface SearchInputProps {
   placeholder?: string;
   onBlur?: () => void;
   className?: string;
-  size?: "small" | "medium" | "large"; // Definimos tamaños en lugar de múltiples props
+  size?: "small" | "medium" | "large"; 
 }
 
 export default function SearchInput({ placeholder = "Search Here", onBlur, className = "", size = "medium" }: SearchInputProps) {

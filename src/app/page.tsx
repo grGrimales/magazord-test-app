@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Header from "@/components/Header";
 import UserProfile from "@/components/UserProfile";
 import Tabs from "@/components/Tabs";
@@ -9,7 +8,6 @@ import Repositories from "@/components/repositories/Repositories";
 
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("repos");
 
   return (
     <div className="min-h-screen flex flex-col items-center">
@@ -20,10 +18,10 @@ export default function Home() {
             <UserProfile />
 
             <div className="w-full max-w-5xl px-6 mt-7">
-              <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
+              <Tabs />
               <Filters />
 
-              <Repositories activeTab={activeTab} />
+              <Repositories  />
             </div>
           </div>
         </div>
