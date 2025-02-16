@@ -13,7 +13,6 @@ export default function Tabs() {
 
   return (
     <div className="w-full flex  sm:flex-row sm:items-center sm:justify-start gap-8">
-      {/* Pestaña de Repositorios */}
       <button
         className={`flex items-center gap-2 relative py-3 text-lg font-normal transition-colors
           ${activeTab === "repos" ? "text-textPrimary" : "text-textSecondary"}
@@ -53,7 +52,7 @@ export default function Tabs() {
         <span
           className="ml-2  px-2 py-1 w-10 h-6 flex items-center justify-center shadow-sm text-sm bg-background rounded-full border border-border text-textSecondary"
         >
-    {starredCount}
+        {starredCount}
         </span>
 
         {activeTab === "starred" && (
