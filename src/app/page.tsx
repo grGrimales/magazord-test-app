@@ -5,28 +5,7 @@ import Header from "@/components/Header";
 import UserProfile from "@/components/UserProfile";
 import Tabs from "@/components/Tabs";
 import Filters from "@/components/filters/Filters";
-import RepoCard from "@/components/RepoCard";
-
-const mockRepos = [
-  {
-    name: "Next.js Test",
-    highlight: "Test",
-    description: "Un test de Next.js",
-    stars: 1500,
-    forks: 100,
-    language: "JavaScript", 
-    url: "#",
-  },
-  {
-    name: "React Query",
-    highlight: "Query",
-    description: "Manejo avanzado de cache en React",
-    stars: 726,
-    forks: 91,
-    language: "TypeScript", 
-    url: "#",
-  },
-];
+import Repositories from "@/components/repositories/Repositories";
 
 
 export default function Home() {
@@ -44,11 +23,7 @@ export default function Home() {
               <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
               <Filters />
 
-              <div className="mt-4">
-                {mockRepos.map((repo) => (
-                  <RepoCard key={repo.name} {...repo} activeTab={activeTab} />
-                ))}
-              </div>
+              <Repositories activeTab={activeTab} />
             </div>
           </div>
         </div>
