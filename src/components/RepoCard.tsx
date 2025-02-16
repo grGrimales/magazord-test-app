@@ -1,22 +1,57 @@
+import { BsStarFill } from "react-icons/bs";
+import { GoGitBranch } from "react-icons/go";
+
 interface RepoCardProps {
   name: string;
+  highlight: string;
   description: string;
   stars: number;
   forks: number;
+  language?: string;
   url: string;
+  activeTab: string; 
 }
 
-export default function RepoCard({ name, description, stars, forks, url }: RepoCardProps) {
-    return (
-      <div className="p-4 border rounded-lg shadow-md bg-white mt-2">
-        <a href={url} target="_blank" rel="noopener noreferrer" className="text-blue-500 font-bold">
-          {name}
-        </a>
-        <p className="text-gray-500 text-sm mt-1">{description}</p>
-        <div className="flex mt-2 text-gray-600 text-sm">
-          <span>⭐ {stars}</span>
-          <span className="ml-4">🍴 {forks}</span>
+export default function RepoCard({
+  name,
+  highlight,
+  description,
+  stars,
+  forks,
+  language,
+  url,
+  activeTab,
+}: RepoCardProps) {
+  return (
+    <div className="border-b border-[#E0E0E0] lg:border-b-0 py-4">
+      <a href={url} target="_blank" rel="noopener noreferrer" className="text-lg">
+        <span className="text-textPrimary font-light">{name}</span>
+        <span className="text-textPrimary font-normal"> / </span>
+        <span className="text-buttonSecondary font-semibold">{highlight}</span>
+      </a>
+
+      <p className="text-textSecondary text-sm font-normal mt-1">{description}</p>
+
+      {/* Exibir conteúdo diferente de acordo com a aba selecionada.*/}
+      <div className="flex items-center gap-4 text-textPrimary text-sm font-normal mt-2">
+        {activeTab === "repos" ? (
+          <>
+            <div className="flex items-center gap-1">
+              <BsStarFill size={16} className="text-black" /> 
+              <span>{stars}</span>
+            </div>
+          </>
+        ) : (
+          <div className="flex items-center gap-1 font-semibold">
+            <span>{language}</span>
+          </div>
+        )}
+
+        <div className="flex items-center gap-1">
+          <GoGitBranch size={16} className="text-black" /> 
+          <span>{forks}</span>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
