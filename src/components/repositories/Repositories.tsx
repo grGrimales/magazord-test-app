@@ -16,12 +16,17 @@ export default function Repositories() {
 
 
   const filteredRepos = repos.filter((repo: Repo) =>
-    repo.name.toLowerCase().includes(searchQuery.toLowerCase())
+    repo.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (repo.description && repo.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
+    (repo.language && repo.language.toLowerCase().includes(searchQuery.toLowerCase()))
   );
-
+  
   const filteredStarred = starred.filter((repo: Repo) =>
-    repo.name.toLowerCase().includes(searchQuery.toLowerCase())
+    repo.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (repo.description && repo.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
+    (repo.language && repo.language.toLowerCase().includes(searchQuery.toLowerCase()))
   );
+  
 
   const data: Repo[] = activeTab === "repos" ? filteredRepos : filteredStarred;
   const isLoading = activeTab === "repos" ? reposLoading : starredLoading;
