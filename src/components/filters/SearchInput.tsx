@@ -1,13 +1,23 @@
+"use client";
+
+import { useState } from "react";
 import { Search } from "lucide-react";
+import { useGithubStore } from "@/store/github/githubStore";
 
 interface SearchInputProps {
   placeholder?: string;
-  onBlur?: () => void;
   className?: string;
   size?: "small" | "medium" | "large"; 
 }
 
-export default function SearchInput({ placeholder = "Search Here", onBlur, className = "", size = "medium" }: SearchInputProps) {
+export default function SearchInput({ 
+  placeholder = "Search Here", 
+  className = "", 
+  size = "medium"
+}: SearchInputProps) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const { setSearchQuery } = useGithubStore();
+
   const sizeClasses = {
     small: {
       icon: "text-textHighlight ml-2",
@@ -23,6 +33,12 @@ export default function SearchInput({ placeholder = "Search Here", onBlur, class
     },
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      setSearchQuery(searchTerm.trim()); 
+    }
+  };
+
   return (
     <div className={`border-b-[#F4F4F4] rounded-lg shadow-sm flex items-center w-full px-3 py-2 ${className}`}>
       <Search size={24} className={sizeClasses[size].icon} />
@@ -30,7 +46,9 @@ export default function SearchInput({ placeholder = "Search Here", onBlur, class
         type="text"
         placeholder={placeholder}
         className={`w-full bg-transparent outline-none px-2 text-textSecondary ${sizeClasses[size].input}`}
-        onBlur={onBlur}
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
     </div>
   );

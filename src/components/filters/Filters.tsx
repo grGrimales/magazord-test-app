@@ -35,7 +35,6 @@ export default function Filters() {
           {showSearch ? (
             <SearchInput 
                 placeholder="Type Something Here..."
-                onBlur={() => setShowSearch(false)} 
                 className="bg-background"
                 size="small" />
           ) : (
