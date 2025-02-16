@@ -1,4 +1,3 @@
-import { text } from "stream/consumers";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -9,39 +8,49 @@ export default {
   ],
   theme: {
     extend: {
-     
       colors: {
-        headerBg: '#24292E', // Fondo del Header
+        headerBg: '#24292E', // Cor de fundo do cabeçalho
 
-        // Colores de texto
-        textPrimary: '#000000', // Texto principal (Negro)
-        textSecondary: '#989898', // Texto gris claro
-        textHighlight: '#0587FF', // Texto resaltado (enlaces, acciones importantes)
-        textWhite: '#FFFFFF', // Texto en elementos oscuros
-        textHover: '#0058A9',
+        // Cores de texto
+        textPrimary: '#000000', 
+        textSecondary: '#989898', 
+        textHighlight: '#0587FF', 
+        textWhite: '#FFFFFF', 
+        textHover: '#0058A9', 
 
-        // Fondos generales
-        background: '#F8F8F8', // Fondo principal de la app
+        // Fundo geral
+        background: '#F8F8F8', 
 
-        // Bordes y separadores
-        border: '#DBDBDB', // Líneas de separación y bordes
-        borderDark: '#262626', // Bordes oscuros para ciertos elementos
+        // Bordas e separadores
+        border: '#DBDBDB', 
+        borderDark: '#262626', 
 
-        // Botones
-        buttonPrimary: '#0056A6', // Botón principal
-        buttonSecondary: '#0587FF', // Botón secundario (hover, enlaces)
+        // Botões
+        buttonPrimary: '#0056A6', // Cor principal dos botões
+        buttonSecondary: '#0587FF', // Cor secundária dos botões
 
-        // Tabs activos (Repositories y Starred)
-        tabActive: '#FD8C73', // Color de la línea de los tabs activos
+        // Tabs ativas (Repositories e Starred)
+        tabActive: '#FD8C73', 
 
-        // Advertencias y alertas
-        alertRed: '#FE354D', // Color para alertas o errores
+        // Alertas e avisos
+        alertRed: '#FE354D', // Cor para mensagens de erro ou alerta
       },
-   
+
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'], 
+      },
+
+      spacing: {
+        '104': '104px',
+        '150': '150px',
+        '105': '105px',
+        '145': '145px',
       },
       
+      width: {
+        "btn-small": "88px", 
+        "btn-large": "120px", 
+      },
     },
   },
   plugins: [],
