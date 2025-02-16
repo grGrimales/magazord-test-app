@@ -17,7 +17,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:items-start">
             <UserProfile />
 
-            <div className="w-full max-w-5xl px-6 mt-7">
+            <div className="w-full max-w-2xl md:max-w-5xl px-2 md:px-6 mt-7">
               <Tabs />
               <Filters />
 

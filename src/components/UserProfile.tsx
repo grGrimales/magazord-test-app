@@ -18,12 +18,12 @@ export default function UserProfile() {
           height={104}
           className="rounded-full border-4 border-white shadow-md  sm:w-104 sm:h-104 lg:w-150 lg:h-150"
         />
-        <div className="absolute bottom-0 right-0 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md">
+        <div className="absolute bottom-0 right-0 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md">
          <span className="text-lg">😎</span> 
         </div>
       </div>
 
-      <div className="flex flex-col w-64 mt-3">
+      <div className="flex flex-col w-64 mt-3 p-4">
         <h2 className="text-xl font-semibold text-textPrimary text-center ">
           Gabriel Cordeiro
         </h2>

@@ -47,19 +47,19 @@ export default function RepoCard({
 
       <div className="flex items-center gap-4 text-textPrimary text-sm font-normal mt-2">
         {activeTab === "repos" ? (
-          <div className="flex items-center gap-1">
-            <BsStarFill size={16} className="text-black" />
-            <span>{stargazers_count.toLocaleString()}</span>
+          <div className="flex items-center gap-1 ">
+            <BsStarFill size={16} className="text-textPrimary" />
+            <span  className="text-sm text-textPrimary">{stargazers_count.toLocaleString()}</span>
           </div>
         ) : (
-          <div className="flex items-center gap-1 font-semibold">
-            <span>{language || "Desconocido"}</span>
+          <div className="flex items-center gap-1">
+            <span  className="text-sm text-textPrimary">{language || "N/A"}</span>
           </div>
         )}
 
-        <div className="flex items-center gap-1">
-          <GoGitBranch size={16} className="text-black" />
-          <span>{forks_count.toLocaleString()}</span>
+        <div className="flex items-center gap-1 text-textPrimary">
+          <GoGitBranch size={16} className="text-textPrimary" />
+          <span  className="text-sm text-textPrimary">{forks_count.toLocaleString()}</span>
         </div>
       </div>
     </a>
