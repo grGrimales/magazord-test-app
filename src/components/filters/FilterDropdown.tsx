@@ -23,7 +23,7 @@ export default function FilterDropdown({ filterType, onClose }: FilterDropdownPr
     <>
       <div className="fixed inset-0 bg-black bg-opacity-20  z-40" onClick={onClose}></div>
 
-      <div className="absolute top-full right-0 mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-200 z-50">
+      <div className="absolute top-full  md:right-0 -mt-11 md:mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-200 z-50">
         <ul className="space-y-2 p-2">
           {options.map((option) => (
             <li
