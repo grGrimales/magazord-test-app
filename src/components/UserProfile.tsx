@@ -14,22 +14,24 @@ export default function UserProfile() {
         <Image
           src="/images/imageProfile.png"
           alt="User Avatar"
-          width={104} 
+          width={104}
           height={104}
           className="rounded-full border-4 border-white shadow-md  sm:w-104 sm:h-104 lg:w-150 lg:h-150"
         />
         <div className="absolute bottom-0 right-0 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-md">
-          {/* <Smile size={18} className="text-yellow-500" /> */}
-          <span className="text-lg">😎</span>
+         <span className="text-lg">😎</span> 
         </div>
       </div>
 
-      <div className="flex flex-col items-center  w-full mt-3">
-        <h2 className="text-xl font-semibold text-textPrimary text-center sm:text-left">
+      <div className="flex flex-col w-64 mt-3">
+        <h2 className="text-xl font-semibold text-textPrimary text-center ">
           Gabriel Cordeiro
         </h2>
-        <p className="text-textSecondary text-sm text-center">
-          Head Development Team Front-End
+        <p className="text-textSecondary text-sm text-left">
+          Head development team Front-End
+        </p>
+        <p className="text-textSecondary text-sm  ml-8">
+          Magazord - Tagged (#BZ)
         </p>
 
         <button
