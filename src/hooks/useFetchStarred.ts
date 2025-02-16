@@ -10,8 +10,5 @@ export const useFetchStarred = () => {
     fetcher
   );
 
-
-  console.log("Fetched repos:", data);
-
   return { starred: data || [], error, isLoading };
 };
