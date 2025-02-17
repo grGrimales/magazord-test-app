@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { Building, MapPin, Link, Camera, ChevronDown, ChevronUp, Smile } from "lucide-react";
+import { Building, MapPin, Link, Camera, ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 
 export default function UserProfile() {

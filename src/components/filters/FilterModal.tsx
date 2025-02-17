@@ -9,6 +9,7 @@ interface FilterModalProps {
 }
 
 export default function FilterModal({ filterType, onClose }: FilterModalProps) {
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   if (!filterType) return null;
 
   const options =
@@ -16,7 +17,6 @@ export default function FilterModal({ filterType, onClose }: FilterModalProps) {
       ? ["All", "Sources", "Forks", "Archived", "Mirrors"]
       : ["All", "Java", "TypeScript", "HTML", "CSS"];
 
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
   const handleSelect = (option: string) => {
     setSelectedOptions((prev) =>

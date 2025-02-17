@@ -19,7 +19,6 @@ export default function SearchInput({
 }: SearchInputProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const { setSearchQuery } = useGithubStore();
-  const [showSearch, setShowSearch] = useState(false);
 
 
   const sizeClasses = {
@@ -40,7 +39,6 @@ export default function SearchInput({
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       setSearchQuery(searchTerm.trim()); 
-      setShowSearch(false);
     }
   };
 

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-
+import { GithubState } from "@/interfaces/GithubState";
 
 
 export const useGithubStore = create<GithubState>((set) => ({

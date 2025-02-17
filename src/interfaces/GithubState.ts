@@ -1,4 +1,4 @@
-interface GithubState {
+export interface GithubState {
   activeTab: string;
   reposCount: number;
   starredCount: number;

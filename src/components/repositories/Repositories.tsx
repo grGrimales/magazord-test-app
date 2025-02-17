@@ -46,7 +46,7 @@ useEffect(() => {
     setStarredLength(filteredStarred.length);
     setStarredCount(filteredStarred.length);
   }
-}, [filteredStarred.length, filteredRepos.length, searchQuery]);
+}, [filteredRepos.length, filteredStarred.length, searchQuery, reposLength, starredLength, setReposCount, setStarredCount], );
 
   if (isLoading) return <p className="text-center">Loading...</p>;
   if (error) return <p className="text-center text-red-500">Error loading repositories.</p>;

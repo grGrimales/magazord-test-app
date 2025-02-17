@@ -1,7 +1,6 @@
 import useSWR from "swr";
 import { fetcher } from "@/utils/fetcher";
 import { useUserStore } from "@/store/user/userStore";
-import { useGithubStore } from "@/store/github/githubStore";
 
 export const useFetchStarred = () => {
   const username = useUserStore((state) => state.username);

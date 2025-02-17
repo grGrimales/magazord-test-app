@@ -3,10 +3,7 @@
 import { useGithubStore } from "@/store/github/githubStore";
 import { Book, Star } from "lucide-react";
 
-interface TabsProps {
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
-}
+
 
 export default function Tabs() {
 
