@@ -10,14 +10,14 @@ import Repositories from "@/components/repositories/Repositories";
 export default function Home() {
 
   return (
-    <div className="min-h-screen flex flex-col items-center">
+    <div className="min-h-screen flex flex-col items-center fade-in">
       <Header />
       <div className="md:w-full md:max-w-5xl flex flex-col sm:flex-row sm:items-start">
         <div className="w-full max-w-5xl">
           <div className="flex flex-col sm:flex-row sm:items-start">
             <UserProfile />
 
-            <div className="w-full max-w-2xl md:max-w-5xl px-2 md:px-6 mt-7">
+            <div className="w-full max-w-2xl md:max-w-5xl px-2 md:px-6 mt-7 fade-in">
               <Tabs />
               <Filters />
 

@@ -35,8 +35,9 @@ export default function Filters() {
           {showSearch ? (
             <SearchInput 
                 placeholder="Type Something Here..."
-                className="bg-background"
-                size="small" />
+                className="bg-background fade-in"
+                size="small"
+                onBlur={() => setShowSearch(false)} />
           ) : (
             <div className="flex items-center w-full bg-background">
               <FilterButtons

@@ -52,7 +52,7 @@ useEffect(() => {
   if (error) return <p className="text-center text-red-500">Error loading repositories.</p>;
 
   return (
-    <div className="mt-4">
+    <div className="mt-4  min-h-[400px] fade-in">
       {data.map((repo: Repo) => (
         <RepoCard key={repo.name} {...repo} activeTab={activeTab} />
       ))}

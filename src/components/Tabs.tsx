@@ -1,3 +1,5 @@
+"use client";
+
 import { useGithubStore } from "@/store/github/githubStore";
 import { Book, Star } from "lucide-react";
 
@@ -14,7 +16,7 @@ export default function Tabs() {
   return (
     <div className="w-full flex  sm:flex-row sm:items-center sm:justify-start gap-8">
       <button
-        className={`flex items-center gap-2 relative py-3 text-lg font-normal transition-colors
+        className={`flex items-center gap-2 relative py-3 text-lg font-normal fade-in
           ${activeTab === "repos" ? "text-textPrimary" : "text-textSecondary"}
         `}
         onClick={() => setActiveTab("repos")}
@@ -33,13 +35,13 @@ export default function Tabs() {
         </span>
 
         {activeTab === "repos" && (
-          <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-tabActive"></span>
+          <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-tabActive fade-in"></span>
         )}
       </button>
 
       <button
         className={`flex items-center gap-2 relative py-3 text-lg font-normal transition-colors
-          ${activeTab === "starred" ? "text-textPrimary" : "text-textSecondary"}
+          ${activeTab === "starred" ? "text-textPrimary" : "text-textSecondary"} fade-in
         `}
         onClick={() => setActiveTab("starred")}
       >
@@ -56,7 +58,7 @@ export default function Tabs() {
         </span>
 
         {activeTab === "starred" && (
-          <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-tabActive"></span>
+          <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-tabActive fade-in"></span>
         )}
       </button>
     </div>

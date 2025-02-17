@@ -9,7 +9,7 @@ export default function UserProfile() {
   const [showLinks, setShowLinks] = useState(false);
 
   return (
-    <div className="p-6 flex flex-col items-center w-full  sm:w-64" >
+    <div className="p-6 flex flex-col items-center w-full  sm:w-64 fade-in" >
       <div className="relative sm:w-104 sm:h-104 lg:w-150 lg:h-150">
         <Image
           src="/images/imageProfile.png"
@@ -45,7 +45,7 @@ export default function UserProfile() {
         </button>
 
         <div className={`mt-4 text-sm ${showLinks ? "block" : "hidden"} sm:block w-full`}>
-          <div className="bg-background  shadow-sm  flex flex-col gap-4 text-textHighlight rounded-2xl sm:bg-transparent sm:p-0 sm:items-start sm:w-fit">
+          <div className="bg-background  shadow-sm  flex flex-col gap-4 text-textHighlight rounded-2xl sm:bg-transparent sm:p-0 sm:items-start sm:w-fit fade-in">
             <a href="#" className="flex items-center gap-2 hover:underline  hover:text-textHover transition-colors">
               <Building size={16} /> Magazord - plataforma
             </a>

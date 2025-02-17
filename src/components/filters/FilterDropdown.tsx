@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 interface FilterDropdownProps {
@@ -21,7 +22,7 @@ export default function FilterDropdown({ filterType, onClose }: FilterDropdownPr
 
   return (
     <>
-      <div className="fixed inset-0 bg-black bg-opacity-20  z-40" onClick={onClose}></div>
+      <div className="fixed inset-0 bg-black bg-opacity-20  z-40 fade-in" onClick={onClose}></div>
 
       <div className="absolute top-full  md:right-0 -mt-11 md:mt-2 w-64 bg-white shadow-lg rounded-lg border border-gray-200 z-50">
         <ul className="space-y-2 p-2">

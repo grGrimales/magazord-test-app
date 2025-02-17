@@ -8,15 +8,19 @@ interface SearchInputProps {
   placeholder?: string;
   className?: string;
   size?: "small" | "medium" | "large"; 
+  onBlur?: () => void;
 }
 
 export default function SearchInput({ 
   placeholder = "Search Here", 
   className = "", 
-  size = "medium"
+  size = "medium",
+  onBlur
 }: SearchInputProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const { setSearchQuery } = useGithubStore();
+  const [showSearch, setShowSearch] = useState(false);
+
 
   const sizeClasses = {
     small: {
@@ -36,6 +40,7 @@ export default function SearchInput({
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       setSearchQuery(searchTerm.trim()); 
+      setShowSearch(false);
     }
   };
 
@@ -49,7 +54,10 @@ export default function SearchInput({
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyDown={handleKeyDown}
+        onBlur={onBlur}
       />
     </div>
   );
 }
+
+
