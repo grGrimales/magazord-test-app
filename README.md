@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+### 🚀 Magazord Frontend Test  
 
-```bash
-npm run dev
-# or
+Teste para vaga de Frontend Developer na **Magazord**. Este projeto foi desenvolvido utilizando **Next.js**, **TypeScript**, **Zustand** e **SWR** para gerenciamento de estado e cache.  
+
+## 📌 Tecnologias utilizadas  
+- **Next.js (App Router)** → Framework para otimizar a aplicação.  
+- **TypeScript** → Tipagem estática para maior segurança no código.  
+- **Zustand** → Gerenciamento global de estado.  
+- **SWR** → Cache e revalidação automática dos dados da API do GitHub.  
+- **TailwindCSS** → Estilização eficiente e responsiva.  
+- **React Icons & Lucide Icons** → Ícones modernos e leves.  
+
+## 📜 Funcionalidades implementadas  
+✅ Carregamento dinâmico de dados da **API do GitHub**.  
+✅ Exibição de repositórios e favoritos do usuário.  
+✅ Barra de pesquisa funcional ao pressionar **Enter**.  
+✅ Design responsivo baseado no **layout do Figma**.  
+✅ Deploy na **Vercel** para testes rápidos.  
+
+---
+
+## 🛠 Como rodar o projeto  
+
+1️⃣ **Clone o repositório:**  
+```sh
+git clone https://github.com/seu-usuario/magazord-frontend-react-test.git
+cd magazord-frontend-react-test
+```  
+
+2️⃣ **Instale as dependências com Yarn:**  
+```sh
+yarn install
+```  
+
+3️⃣ **Configure as variáveis de ambiente:**  
+Crie um arquivo **.env.local** na raiz do projeto e adicione:  
+```env
+NEXT_PUBLIC_GITHUB_TOKEN=https://api.github.com
+```  
+
+4️⃣ **Inicie o servidor de desenvolvimento:**  
+```sh
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+```  
+O projeto estará disponível em **http://localhost:3000** 🚀  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚠️ Desafios encontrados e como foram resolvidos  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1️⃣ Problema: **Atualização infinita ao salvar repositórios no Zustand**  
+**Causa:** O estado global estava sendo atualizado dentro do `useEffect`, sem verificar se os dados já estavam armazenados corretamente.  
+✅ **Solução:** Implementamos um controle de dependências adequado, garantindo que os dados só fossem armazenados quando houvesse mudanças reais.  
 
-## Learn More
+### 2️⃣ Problema: **A busca não atualizava corretamente os repositórios**  
+**Causa:** O estado `searchQuery` estava sendo armazenado corretamente no Zustand, mas o filtro estava sendo aplicado apenas nos dados exibidos, sem alterar a fonte original dos dados.  
+✅ **Solução:** A lógica foi ajustada para que `searchQuery` seja armazenado no Zustand, enquanto o filtro é aplicado diretamente nos repositórios renderizados no componente `Repositories`, garantindo que apenas os dados visíveis sejam filtrados corretamente.  
 
-To learn more about Next.js, take a look at the following resources:
+### 3️⃣ Problema: **Layout desalinhado em telas grandes**  
+**Causa:** O **Header** não estava corretamente centralizado em relação ao conteúdo principal.  
+✅ **Solução:** Ajustamos o `max-width` do container principal e utilizamos **margin auto** para garantir alinhamento consistente em todas as telas.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔥 Melhorias futuras  
 
-## Deploy on Vercel
+- **SSR (Server Side Rendering):** Implementar para melhorar a performance e evitar excesso de requisições à API do GitHub.  
+- **Paginação:** Implementar uma paginação eficiente para carregar os repositórios em lotes menores, otimizando a experiência do usuário.  
+- **Testes automatizados:** Adicionar **Jest** e **React Testing Library** para garantir maior confiabilidade do código.  
+- **Dark Mode:** Implementar suporte ao tema escuro para melhorar a experiência do usuário.  
+- **Filtros por linguagem e tipo de repositório:** Ainda não implementado, mas será adicionado em uma próxima iteração.  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎯 Conclusão  
+
+Este projeto foi desenvolvido seguindo boas práticas de **arquitetura**, **estado global eficiente** e **cache otimizado**. A aplicação atende aos requisitos propostos e foi otimizada para performance e experiência do usuário. 🚀  
+
+---
+
+Caso tenha alguma dúvida ou sugestão, fique à vontade para entrar em contato! 😃  
+
