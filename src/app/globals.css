@@ -9,6 +9,11 @@ body {
 }
 
 
+html {
+  overflow-y: scroll;
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
